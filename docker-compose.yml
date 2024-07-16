@@ -1,0 +1,26 @@
+services:
+  mysql-server:
+    image: mysql
+    restart: always
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: 123@123
+    ports:
+      - 3306:3306
+    networks:
+      - spark-demo-network
+    volumes:
+      - ./scripts/mysql_init.sql:/docker-entrypoint-initdb.d/mysql_init.sql
+
+  mongo-server:
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      - spark-demo-network
+
+
+networks:
+  spark-demo-network:
+
+  
