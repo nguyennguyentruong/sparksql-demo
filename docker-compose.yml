@@ -19,6 +19,15 @@ services:
     networks:
       - spark-demo-network
 
+  spark-notebook:
+    image: jupyter/pyspark-notebook
+    volumes:
+      - ./src:/home/jovyan
+    ports:
+      - 8888:8888
+    networks:
+      - spark-demo-network
+
 
 networks:
   spark-demo-network:
