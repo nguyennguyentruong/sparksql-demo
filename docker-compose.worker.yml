@@ -12,6 +12,8 @@ services:
         - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
         - SPARK_SSL_ENABLED=no
         - SPARK_USER=spark
+      volumes:
+        - ./:/app
       networks:
         - spark-network
 

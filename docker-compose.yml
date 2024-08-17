@@ -1,0 +1,17 @@
+services:
+  spark-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spark-demo
+    volumes:
+      - ./:/app
+    ports:
+      - "8888:8888"
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
+    name: spark-network
+    external: true

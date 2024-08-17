@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 # Initialize a Spark session
 spark = SparkSession.builder \
     .appName("PySpark Example") \
-    .master("spark://localhost:7077") \
+    .master("spark://spark-master:7077") \
     .getOrCreate()
 
 # Print the Spark version
